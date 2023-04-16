@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shanari-shanari-fe
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: shanari-shanari-fe
+  template:
+    metadata:
+      labels:
+        app: shanari-shanari-fe
+    spec:
+      containers:
+        - name: shanari-shanari-fe
+          image: shanari-shanari-fe
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: IfNotPresent #
+      imagePullSecrets:
+        - name: shanari-shanari-fe-secret

@@ -48,3 +48,26 @@ components/
    └─ ...
 
 ```
+
+## kubectl での起動
+
+- Docker イメージの作成
+
+```
+$ docker build . -t shanari-shanari-fe:latest
+```
+
+- kubectl の実行
+
+```
+$ kubectl apply -f deployment.yaml
+$ kubectl apply -f service.yaml
+$ kubectl port-forward service/shanari-shanari-fe-service 3000:80
+```
+
+- kubectl の停止
+
+```
+$ kubectl delete -f service.yaml
+$ kubectl delete -f deployment.yaml
+```
