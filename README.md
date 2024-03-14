@@ -9,7 +9,7 @@
 Dockerfile があるディレクトリで以下のコマンドよりイメージを作成する
 
 ```
-$ docker build -t shanari-shanari-fe .
+$ docker build -t shanari-shanari-fe:v0.0.1 .
 ```
 
 ## Docker で実行確認
