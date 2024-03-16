@@ -19,10 +19,7 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT }}
-  PROJECT_NUMBER: ${{ secrets.GCP_PROJECT_NUMBER }}
   GAR_LOCATION: ${{ secrets.GCP_LOCATION }} # TODO: update region of the Artifact Registry
-  GCP_IDENTITY_POOL: ${{ secrets.GCP_IDENTITY_POOL }}
-  GCP_ID_PROVIDER: ${{ secrets.GCP_ID_PROVIDER }}
   REPOSITORY: ${{ secrets.REPOSITORY_NAME }} # TODO: update to Artifact Registry docker repository
   IMAGE: ${{ secrets.IMAGE_NAME }}
 
@@ -46,8 +43,8 @@ jobs:
         uses: "google-github-actions/auth@v2"
         with:
           token_format: "access_token"
-          workload_identity_provider: "projects/${GCP_PROJECT_NUMBER}/locations/global/workloadIdentityPools/${GCP_IDENTITY_POOL}/providers/${GCP_ID_PROVIDER}"
-          service_account: "actions-to-gar@shanari-shanari.iam.gserviceaccount.com"
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
 
       # Alternative option - authentication via credentials json
       # - id: 'auth'
