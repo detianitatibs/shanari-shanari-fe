@@ -9,7 +9,7 @@
 # 3. Change the values for the GAR_LOCATION, GKE_ZONE, GKE_CLUSTER, IMAGE, REPOSITORY and DEPLOYMENT_NAME environment variables (below).
 #
 # For more support on how to run the workflow, please visit https://github.com/google-github-actions/setup-gcloud/tree/master/example-workflows/gke-kustomize
-# Appendix:  https://zenn.dev/kou_pg_0131/articles/gh-actions-oidc-gcp
+# Appendix: https://zenn.dev/kou_pg_0131/articles/gh-actions-oidc-gcp
 
 name: Build and Push to GAR
 
@@ -45,6 +45,7 @@ jobs:
           token_format: "access_token"
           workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+      - run: gcloud auth login
 
       # Alternative option - authentication via credentials json
       # - id: 'auth'
