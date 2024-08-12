@@ -7,10 +7,17 @@ on:
     tags:
       - "*"
 
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+  GAR_LOCATION: ${{ secrets.GCP_LOCATION }} # TODO: update region of the Artifact Registry
+  REPOSITORY: ${{ secrets.REPOSITORY_NAME }} # TODO: update to Artifact Registry docker repository
+  IMAGE: ${{ secrets.IMAGE_NAME }}
+
 jobs:
   build-test:
     name: Build and Test
     runs-on: ubuntu-latest
+    environment: GCP
 
     permissions:
       contents: "read"
