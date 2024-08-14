@@ -6,14 +6,20 @@ const meta: Meta<typeof Logos> = {
   component: Logos,
 };
 
+export default meta;
+
 // Dummy Function
 const dummyFunction = () => console.log("Dummy");
 
-export default meta;
+// Test Object
+const obj_main = {
+  pattern: "main",
+  onClick: dummyFunction,
+};
+const obj_header = {
+  pattern: "header",
+  onClick: dummyFunction,
+};
 
-export const Main = () => (
-  <Logos pattern="main" onClick={dummyFunction}></Logos>
-);
-export const Header = () => (
-  <Logos pattern="header" onClick={dummyFunction}></Logos>
-);
+export const Main = () => <Logos {...obj_main}></Logos>;
+export const Header = () => <Logos {...obj_header}></Logos>;

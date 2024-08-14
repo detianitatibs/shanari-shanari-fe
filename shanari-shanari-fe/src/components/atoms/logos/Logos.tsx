@@ -1,18 +1,18 @@
 import Image from "next/image";
 
-type Props = {
+interface Props {
   pattern: string;
   onClick: () => void;
-};
+}
 
-const Logos = (props: Props) => {
-  if (props.pattern === "main") {
+const Logos = ({ pattern, onClick }: Props) => {
+  if (pattern === "main") {
     return (
       <Image
         src="/logo_main.png"
         width={860}
         height={214}
-        onClick={props.onClick}
+        onClick={onClick}
         alt="Main Logo"
       />
     );
@@ -22,7 +22,7 @@ const Logos = (props: Props) => {
         src="/logo_header.png"
         width={120}
         height={40}
-        onClick={props.onClick}
+        onClick={onClick}
         alt="Header Logo"
       />
     );

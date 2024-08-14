@@ -1,13 +1,13 @@
-type Props = {
+interface Props {
   color: string;
-};
+}
 
-const ObjectSubtitle = (props: Props) => {
+const ObjectSubtitle = ({ color }: Props) => {
   const baseClassName = "w-4 h-8 rounded-[5px] ";
   const selected_color = [];
 
   // 色を指定する
-  switch (props.color) {
+  switch (color) {
     case "main":
       selected_color.push("bg-zinc-400");
       break;
