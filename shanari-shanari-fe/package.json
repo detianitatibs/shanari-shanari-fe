@@ -11,6 +11,11 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@iconify-json/bx": "^1.1.11",
+    "@iconify-json/carbon": "^1.1.37",
+    "@iconify-json/mingcute": "^1.1.19",
+    "@iconify-json/streamline": "^1.1.9",
+    "@iconify/tailwind": "^1.1.2",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18"
