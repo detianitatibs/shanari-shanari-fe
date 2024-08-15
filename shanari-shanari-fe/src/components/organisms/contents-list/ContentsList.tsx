@@ -23,7 +23,7 @@ const ContentsList = ({ subject_name, cards }: Props) => {
   return (
     <div className="p-4">
       <Subject {...subject}></Subject>
-      <div className="grid grid-cols-4 gap-8 px-4 py-4 md:grid-cols-2 sm:grid-cols-1">
+      <div className="grid gap-8 px-4 py-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
         {/* 受け取ったカードの要素だけループする */}
         {cards.map((card, index) => {
           return <Card key={index} {...card}></Card>;
