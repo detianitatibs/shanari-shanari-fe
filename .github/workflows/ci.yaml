@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v3
 
       # Create .env.test.local ファイル
-      - name: Create .env.text.local file
+      - name: Create .env.test.local file
         run: |
           cat << EOF > shanari-shanari-fe/.env.test.local
           ENVIRONMENT=${{ secrets.ENV_TEST }}
