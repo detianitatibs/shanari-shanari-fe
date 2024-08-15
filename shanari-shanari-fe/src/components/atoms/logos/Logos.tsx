@@ -14,7 +14,7 @@ const Logos = ({ pattern, onClick }: Props) => {
         height={214}
         onClick={onClick}
         alt="Main Logo"
-        className="rounded-md py-14"
+        className="rounded-md py-14 mx-auto"
       />
     );
   } else {
