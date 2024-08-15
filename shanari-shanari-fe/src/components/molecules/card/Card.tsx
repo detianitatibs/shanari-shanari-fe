@@ -13,7 +13,7 @@ const Card = ({ image_path, title, category, date }: Props) => {
 
   return (
     <div className="max-w-60  rounded-md overflow-hidden shadow-md">
-      <div className="w-[240px] h-[120px] flex justify-center align-middle">
+      <div className="h-[120px] flex justify-center align-middle">
         <Image
           src={image_path}
           width={240}
@@ -22,7 +22,7 @@ const Card = ({ image_path, title, category, date }: Props) => {
           style={{ objectFit: "contain" }}
         />
       </div>
-      <div className="w-[240px] h-[80px] relative">
+      <div className="h-[80px] relative">
         <div className="text-size5">{title}</div>
         <div className="absolute bottom-0 left-0 px-2">
           <Icons icon_key={category} additionalClassName="text-size3"></Icons>
