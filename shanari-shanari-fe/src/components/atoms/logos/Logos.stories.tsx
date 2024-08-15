@@ -20,6 +20,10 @@ const obj_header = {
   pattern: "header",
   onClick: dummyFunction,
 };
+const obj_no_click_function = {
+  pattern: "header",
+};
 
 export const Main = () => <Logos {...obj_main}></Logos>;
 export const Header = () => <Logos {...obj_header}></Logos>;
+export const NoClickFunction = () => <Logos {...obj_no_click_function}></Logos>;

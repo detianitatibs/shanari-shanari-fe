@@ -2,7 +2,7 @@ import Image from "next/image";
 
 interface Props {
   pattern: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const Logos = ({ pattern, onClick }: Props) => {
