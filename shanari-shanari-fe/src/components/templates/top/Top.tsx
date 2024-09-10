@@ -1,4 +1,3 @@
-import Header from "@/components/organisms/header/Header";
 import Logos from "@/components/atoms/logos/Logos";
 import ContentsList from "@/components/organisms/contents-list/ContentsList";
 import AdSense from "@/components/atoms/ad-sense/AdSense";
@@ -21,9 +20,6 @@ interface Props {
 }
 
 const Top = ({ obj_tech, obj_blog }: Props) => {
-  // 広告要素
-  const slot = process.env.AD_SLOT || "";
-
   // タイトル要素
   const obj_title = {
     pattern: "main",
@@ -33,24 +29,9 @@ const Top = ({ obj_tech, obj_blog }: Props) => {
 
   return (
     <>
-      <Header></Header>
-      {/* レイアウトを5分割して1:3:1の比率で利用する */}
-      <div className="grid grid-cols-5 gap-4">
-        {/* Ad左 */}
-        <div className="...">
-          <AdSense slot={slot}></AdSense>
-        </div>
-        {/* メインコンテンツ */}
-        <div className="col-span-3">
-          <Logos {...obj_title}></Logos>
-          <ContentsList {...obj_tech}></ContentsList>
-          <ContentsList {...obj_blog}></ContentsList>
-        </div>
-        {/* Ad右 */}
-        <div className="...">
-          <AdSense slot={slot}></AdSense>
-        </div>
-      </div>
+      <Logos {...obj_title}></Logos>
+      <ContentsList {...obj_tech}></ContentsList>
+      <ContentsList {...obj_blog}></ContentsList>
     </>
   );
 };
