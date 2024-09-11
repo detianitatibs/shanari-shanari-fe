@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   pattern: string;
@@ -19,14 +20,16 @@ const Logos = ({ pattern, onClick }: Props) => {
     );
   } else {
     return (
-      <Image
-        src="/logo_header.drawio.svg"
-        width={120}
-        height={40}
-        onClick={onClick}
-        alt="Header Logo"
-        className="rounded-md"
-      />
+      <Link href="/">
+        <Image
+          src="/logo_header.drawio.svg"
+          width={120}
+          height={40}
+          onClick={onClick}
+          alt="Header Logo"
+          className="rounded-md"
+        />
+      </Link>
     );
   }
 };

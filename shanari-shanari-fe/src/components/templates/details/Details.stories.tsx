@@ -1,13 +1,14 @@
 import type { Meta } from "@storybook/react";
-import ContentsList from "./ContentsList";
+import Details from "./Details";
 
-const meta: Meta<typeof ContentsList> = {
-  title: "Organisms/コンテンツリスト/トップページ",
-  component: ContentsList,
+const meta: Meta<typeof Details> = {
+  title: "Templates/個別詳細ページ/個別詳細ページ",
+  component: Details,
 };
 
 export default meta;
 
+// テスト用に一旦準備
 const array_card_tech = [];
 const array_card_blog = [];
 const card = {
@@ -16,14 +17,11 @@ const card = {
   category: "blog",
   date: new Date(2024, 10, 10),
 };
-
-// 複数カードを用意する (8より少ないパターン)
-for (let i = 0; i < 4; i++) {
+// 複数カードを用意する
+for (let i = 0; i < 10; i++) {
   array_card_tech.push(card);
 }
-
-// 複数カードを用意する (8より多いパターン)
-for (let i = 0; i < 8; i++) {
+for (let i = 0; i < 20; i++) {
   array_card_blog.push(card);
 }
 
@@ -40,5 +38,5 @@ const obj_blog = {
   is_button: true,
 };
 
-export const Tech = () => <ContentsList {...obj_tech}></ContentsList>;
-export const Blog = () => <ContentsList {...obj_blog}></ContentsList>;
+export const Tech = () => <Details {...obj_tech}></Details>;
+export const Blog = () => <Details {...obj_blog}></Details>;

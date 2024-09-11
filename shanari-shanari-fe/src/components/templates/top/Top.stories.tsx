@@ -2,7 +2,7 @@ import type { Meta } from "@storybook/react";
 import Top from "./Top";
 
 const meta: Meta<typeof Top> = {
-  title: "Tops/トップページ/トップページ",
+  title: "Templates/トップページ/トップページ",
   component: Top,
 };
 
@@ -22,12 +22,16 @@ for (let i = 0; i < 20; i++) {
 }
 
 const obj_tech = {
-  subject_name: "Technologies",
+  subject_name: "Technology",
+  abbreviation_name: "tech",
   cards: array_card,
+  is_button: false,
 };
 const obj_blog = {
   subject_name: "Blog",
+  abbreviation_name: "blog",
   cards: array_card,
+  is_button: true,
 };
 
 export const Default = () => (
