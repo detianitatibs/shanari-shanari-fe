@@ -10,8 +10,9 @@ interface Card {
 
 interface ContentsList {
   subject_name: string;
+  abbreviation_name: string;
   cards: Card[];
-  is_and_more: boolean;
+  is_button: boolean;
 }
 
 interface Props {

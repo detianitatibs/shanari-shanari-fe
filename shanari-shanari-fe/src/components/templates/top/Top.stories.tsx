@@ -23,11 +23,15 @@ for (let i = 0; i < 20; i++) {
 
 const obj_tech = {
   subject_name: "Technology",
+  abbreviation_name: "tech",
   cards: array_card,
+  is_button: false,
 };
 const obj_blog = {
   subject_name: "Blog",
+  abbreviation_name: "blog",
   cards: array_card,
+  is_button: true,
 };
 
 export const Default = () => (

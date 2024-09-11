@@ -16,13 +16,15 @@ export default function Home() {
 
   const obj_tech = {
     subject_name: "Technology",
+    abbreviation_name: "tech",
     cards: array_card,
-    is_and_more: false,
+    is_button: false,
   };
   const obj_blog = {
     subject_name: "Blog",
+    abbreviation_name: "blog",
     cards: array_card,
-    is_and_more: true,
+    is_button: true,
   };
 
   return (
