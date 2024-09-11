@@ -15,12 +15,14 @@ export default function Home() {
   }
 
   const obj_tech = {
-    subject_name: "Technologies",
+    subject_name: "Technology",
     cards: array_card,
+    is_and_more: false,
   };
   const obj_blog = {
     subject_name: "Blog",
     cards: array_card,
+    is_and_more: true,
   };
 
   return (

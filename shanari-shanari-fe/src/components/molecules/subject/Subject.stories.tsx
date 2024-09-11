@@ -10,7 +10,7 @@ export default meta;
 
 const obj_tech = {
   object_color: "accent",
-  subject_name: "Technologies",
+  subject_name: "Technology",
 };
 const obj_blog = {
   object_color: "accent",

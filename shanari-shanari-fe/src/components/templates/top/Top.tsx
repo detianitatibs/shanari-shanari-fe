@@ -1,6 +1,5 @@
 import Logos from "@/components/atoms/logos/Logos";
 import ContentsList from "@/components/organisms/contents-list/ContentsList";
-import AdSense from "@/components/atoms/ad-sense/AdSense";
 
 interface Card {
   image_path: string;
@@ -12,6 +11,7 @@ interface Card {
 interface ContentsList {
   subject_name: string;
   cards: Card[];
+  is_and_more: boolean;
 }
 
 interface Props {
@@ -25,7 +25,7 @@ const Top = ({ obj_tech, obj_blog }: Props) => {
     pattern: "main",
   };
 
-  // コンテンツリスト - Technologies ここにロジック用意する予定
+  // コンテンツリスト - Technology ここにロジック用意する予定
 
   return (
     <>
