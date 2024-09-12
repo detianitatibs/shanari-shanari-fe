@@ -59,7 +59,7 @@ jobs:
           AD_SLOT=${{ secrets.AD_SLOT }}
           EOF
 
-          # Build the Docker image
+      # Build the Docker image
       - name: Build
         run: |-
           docker build \
@@ -68,7 +68,17 @@ jobs:
             --build-arg GITHUB_REF="$GITHUB_REF" \
             .
 
-      # Please add test steps
+      # Test
+      - name: setup-node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.10.0
+      - name: npm-install
+        run: npm install --save-dev
+        working-directory: ./shanari-shanari-fe
+      - name: Jest Test
+        run: npm run test
+        working-directory: ./shanari-shanari-fe
 
       # Push the Docker image to Google Artifact Registry
       - name: Publish
