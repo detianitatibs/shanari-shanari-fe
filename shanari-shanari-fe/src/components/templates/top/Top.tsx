@@ -1,26 +1,9 @@
 import Logos from "@/components/atoms/logos/Logos";
 import ContentsList from "@/components/organisms/contents-list/ContentsList";
 
-interface Card {
-  image_path: string;
-  title: string;
-  category: string;
-  date: Date;
-}
+import TopProps from "@/types/TopProps";
 
-interface ContentsList {
-  subject_name: string;
-  abbreviation_name: string;
-  cards: Card[];
-  is_button: boolean;
-}
-
-interface Props {
-  obj_tech: ContentsList;
-  obj_blog: ContentsList;
-}
-
-const Top = ({ obj_tech, obj_blog }: Props) => {
+const Top = ({ obj_tech, obj_blog }: TopProps) => {
   // タイトル要素
   const obj_title = {
     pattern: "main",

@@ -3,26 +3,14 @@ import Card from "@/components/molecules/card/Card";
 import Buttons from "@/components/atoms/buttons/Buttons";
 import Link from "next/link";
 
-interface Card {
-  image_path: string;
-  title: string;
-  category: string;
-  date: Date;
-}
-
-interface Props {
-  subject_name: string;
-  abbreviation_name: string;
-  cards: Card[];
-  is_button: boolean;
-}
+import ContentsListProps from "@/types/ContentsListProps";
 
 const ContentsList = ({
   subject_name,
   abbreviation_name,
   cards,
   is_button,
-}: Props) => {
+}: ContentsListProps) => {
   // 個別一覧ページへのリンク作成
   const detail_link = "/" + abbreviation_name;
 

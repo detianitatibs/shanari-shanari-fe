@@ -1,8 +1,6 @@
-interface Props {
-  color: string;
-}
+import ObjectSubtitleProps from "@/types/ObjectSubtitleProps";
 
-const ObjectSubtitle = ({ color }: Props) => {
+const ObjectSubtitle = ({ color }: ObjectSubtitleProps) => {
   const baseClassName = "w-4 h-8 rounded-[5px] ";
   const selected_color = [];
 

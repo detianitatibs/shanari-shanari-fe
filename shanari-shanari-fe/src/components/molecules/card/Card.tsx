@@ -1,14 +1,9 @@
 import Image from "next/image";
 import Icons from "@/components/atoms/icons/Icons";
 
-interface Props {
-  image_path: string;
-  title: string;
-  category: string;
-  date: Date;
-}
+import CardProps from "@/types/CardProps";
 
-const Card = ({ image_path, title, category, date }: Props) => {
+const Card = ({ image_path, title, category, date }: CardProps) => {
   const str_date = date.toLocaleDateString("ja-JP");
 
   return (
