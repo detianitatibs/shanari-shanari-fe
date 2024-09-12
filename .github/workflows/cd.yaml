@@ -53,7 +53,7 @@ jobs:
       # Create .env.prod.local ファイル
       - name: Create .env.prod.local file
         run: |
-          cat << EOF > shanari-shanari-fe/.env.prod.local
+          cat << EOF > shanari-shanari-fe/.env.production.local
           ENVIRONMENT=${{ secrets.ENV_PROD }}
           AD_PUBLISHER_ID=${{ secrets.AD_PUBLISHER_ID }}
           AD_SLOT=${{ secrets.AD_SLOT }}
