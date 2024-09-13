@@ -18,7 +18,7 @@ describe("FetchContentConfsの単体テスト", () => {
     fs.rmSync(directory_path, { recursive: true });
   });
 
-  test("正常系テスト01", () => {
+  test("正常系テスト01", async () => {
     // Case: Prepared test values
     // For Tech File
     fs.mkdirSync(path.join(directory_path, "contents/tech"), {
@@ -44,8 +44,7 @@ describe("FetchContentConfsの単体テスト", () => {
     ];
 
     // When: Execute function
-    const res = FetchContentConfs(directory_path);
-    console.log(res);
+    const res = await FetchContentConfs(directory_path);
 
     // Then: Confirm to be successed
     // 長さのテスト
