@@ -1,35 +1,26 @@
 import Top from "@/components/templates/top/Top";
+import FetchContentConfs from "@/libs/fetch_data/FetchContentConfs";
+import FetchCardConfs from "@/libs/fetch_data/FetchCardConfs";
+import logger from "@/libs/util/logger";
 
-export default function Home() {
-  // テスト用に一旦準備
-  const array_card = [];
-  const card = {
-    image_path: "/icon.png",
-    title: "これはブログのタイトルです",
-    category: "blog",
-    date: new Date(2024, 10, 10),
-  };
-  // 複数カードを用意する
-  for (let i = 0; i < 3; i++) {
-    array_card.push(card);
-  }
+const Home = async () => {
+  // コンテンツ一覧を取得
+  const array_obj_contents = await FetchContentConfs("public/");
+  logger.info("Got array_obj_contents");
+  logger.info({ msg: array_obj_contents });
 
-  const obj_tech = {
-    subject_name: "Technology",
-    abbreviation_name: "tech",
-    cards: array_card,
-    is_button: false,
-  };
-  const obj_blog = {
-    subject_name: "Blog",
-    abbreviation_name: "blog",
-    cards: array_card,
-    is_button: true,
-  };
+  // カード一覧を取得
+  const array_cards = await FetchCardConfs(
+    "public/",
+    array_obj_contents,
+    Number(process.env.TOPCUT_TOP)
+  );
 
   return (
     <main>
-      <Top obj_tech={obj_tech} obj_blog={obj_blog}></Top>
+      <Top contents={array_cards}></Top>
     </main>
   );
-}
+};
+
+export default Home;

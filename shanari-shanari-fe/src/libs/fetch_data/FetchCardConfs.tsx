@@ -78,8 +78,7 @@ const FetchCardConfs = async (
       ) as CardConf;
       // image_pathに指定がない場合はデフォルトの画像(icon.png)を指定する
       array_card.push({
-        image_path:
-          obj_card.CardConf.image_path ?? path.join(directory_path, "icon.png"),
+        image_path: obj_card.CardConf.image_path ?? "/icon.png",
         title: obj_card.CardConf.title,
         category: obj_card.CardConf.category,
         date: new Date(obj_card.CardConf.date),

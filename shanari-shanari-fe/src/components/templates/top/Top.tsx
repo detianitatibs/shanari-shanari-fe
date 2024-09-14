@@ -1,9 +1,9 @@
 import Logos from "@/components/atoms/logos/Logos";
 import ContentsList from "@/components/organisms/contents-list/ContentsList";
 
-import TopProps from "@/types/TopProps";
+import ContentsListProps from "@/types/ContentsListProps";
 
-const Top = ({ obj_tech, obj_blog }: TopProps) => {
+const Top = ({ contents }: { contents: ContentsListProps[] }) => {
   // タイトル要素
   const obj_title = {
     pattern: "main",
@@ -14,8 +14,9 @@ const Top = ({ obj_tech, obj_blog }: TopProps) => {
   return (
     <>
       <Logos {...obj_title}></Logos>
-      <ContentsList {...obj_tech}></ContentsList>
-      <ContentsList {...obj_blog}></ContentsList>
+      {contents.map((content) => {
+        return <ContentsList {...content}></ContentsList>;
+      })}
     </>
   );
 };

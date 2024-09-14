@@ -17,7 +17,7 @@ const card = {
   date: new Date(2024, 10, 10),
 };
 // 複数カードを用意する
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 10; i++) {
   array_card.push(card);
 }
 
@@ -33,7 +33,6 @@ const obj_blog = {
   cards: array_card,
   is_button: true,
 };
+const contents = [obj_tech, obj_blog];
 
-export const Default = () => (
-  <Top obj_tech={obj_tech} obj_blog={obj_blog}></Top>
-);
+export const Default = () => <Top contents={contents}></Top>;
