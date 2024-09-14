@@ -1,0 +1,4 @@
+ContentConf:
+  subject_name: "Blog"
+  abbreviation_name: "blog"
+  priority: 5

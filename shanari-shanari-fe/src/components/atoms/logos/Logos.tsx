@@ -1,12 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface Props {
-  pattern: string;
-  onClick?: () => void;
-}
+import LogosProps from "@/types/LogosProps";
 
-const Logos = ({ pattern, onClick }: Props) => {
+const Logos = ({ pattern, onClick }: LogosProps) => {
   if (pattern === "main") {
     return (
       <Image

@@ -1,9 +1,6 @@
-interface Props {
-  icon_key: string;
-  additionalClassName?: string;
-}
+import IconsProps from "@/types/IconsProps";
 
-const Icons = ({ icon_key, additionalClassName = "" }: Props) => {
+const Icons = ({ icon_key, additionalClassName = "" }: IconsProps) => {
   // 各クラス名を条件に沿って連結する
   const additionalElement = [];
 

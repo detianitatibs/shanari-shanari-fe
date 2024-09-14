@@ -1,8 +1,6 @@
-interface Props {
-  text: string;
-}
+import ButtonProps from "@/types/ButtonProps";
 
-const Buttons = ({ text }: Props) => {
+const Buttons = ({ text }: ButtonProps) => {
   return (
     <button
       type="button"

@@ -1,12 +1,9 @@
 import ObjectSubtitle from "@/components/atoms/object-subtitle/ObjectSubtitle";
 import BorderHorizon from "@/components/atoms/border-horizon/BorderHorizon";
 
-interface Props {
-  object_color: string;
-  subject_name: string;
-}
+import SubjectProps from "@/types/SubjectProps";
 
-const Subject = ({ object_color, subject_name }: Props) => {
+const Subject = ({ object_color, subject_name }: SubjectProps) => {
   return (
     <>
       <div className="flex">

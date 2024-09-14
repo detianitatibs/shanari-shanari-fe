@@ -131,3 +131,7 @@ dist
 
 .node-version
 .DS_Store
+
+# ブログの記事は除外する
+/shanari-shanari-fe/public/contents/blog/*
+!/shanari-shanari-fe/public/contents/blog/ContentConf.yaml

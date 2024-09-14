@@ -1,0 +1,5 @@
+CardConf:
+  # image_path: "XXX" ない場合はデフォルト(icon.png)を使うようにしたい
+  title: "カードテスト"
+  category: tech
+  date: "2000-10-01"

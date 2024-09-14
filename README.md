@@ -12,6 +12,12 @@
 $ npm run dev
 ```
 
+## StoryBook の起動
+
+```
+$ npm run storybook
+```
+
 ## Docker イメージ作成方法
 
 Dockerfile があるディレクトリで以下のコマンドよりイメージを作成する
@@ -34,4 +40,10 @@ $ docker run -d -p 3000:3000 --name ssfe shanari-shanari-fe
 ```
 $ docker stop ssfe
 $ docker rm ssfe
+```
+
+## Jest による単体テストの実施
+
+```
+$ npm run test
 ```

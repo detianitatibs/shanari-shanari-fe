@@ -2,26 +2,14 @@ import Subject from "@/components/molecules/subject/Subject";
 import Card from "@/components/molecules/card/Card";
 import Buttons from "@/components/atoms/buttons/Buttons";
 
-interface Card {
-  image_path: string;
-  title: string;
-  category: string;
-  date: Date;
-}
-
-interface Props {
-  subject_name: string;
-  abbreviation_name: string;
-  cards: Card[];
-  is_button: boolean;
-}
+import ContentsListProps from "@/types/ContentsListProps";
 
 const ContentsListDetails = ({
   subject_name,
   abbreviation_name,
   cards,
   is_button,
-}: Props) => {
+}: ContentsListProps) => {
   // 件名要素の設定
   const subject = {
     object_color: "accent",

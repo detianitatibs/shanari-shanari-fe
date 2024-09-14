@@ -2,18 +2,12 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import GoogleAdProps from "@/types/GoogleAdProps";
 
 declare global {
   interface Window {
     adsbygoogle: { [key: string]: unknown }[];
   }
-}
-
-interface GoogleAdProps {
-  slot: string;
-  format?: string;
-  responsive?: string;
-  style?: any;
 }
 
 const AdSense = ({
