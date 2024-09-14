@@ -45,7 +45,7 @@ describe("FetchCardConfsの単体テスト", () => {
       { subject_name: "Blog", abbreviation_name: "blog", priority: 5 },
     ];
     const card: CardProps = {
-      image_path: path.join(directory_path, "icon.png"),
+      image_path: "/icon.png",
       title: "カードテスト",
       category: "tech",
       date: new Date("2000-10-01"),
