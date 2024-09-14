@@ -15,7 +15,12 @@ const Top = ({ contents }: { contents: ContentsListProps[] }) => {
     <>
       <Logos {...obj_title}></Logos>
       {contents.map((content) => {
-        return <ContentsList {...content}></ContentsList>;
+        return (
+          <ContentsList
+            key={content.abbreviation_name}
+            {...content}
+          ></ContentsList>
+        );
       })}
     </>
   );
