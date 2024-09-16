@@ -60,19 +60,19 @@ const FetchCardConfs = async (
     logger.debug({ msg: translated_card_conf_full_paths });
 
     // 上位topcut_number分取得
-    const topcut_card_conf_full_paths = translated_card_conf_full_paths.slice(
-      0,
-      topcut_number
-    );
-    logger.debug("TopCut Card Conf Full Paths:");
-    logger.debug({ msg: topcut_card_conf_full_paths });
+    // const topcut_card_conf_full_paths = translated_card_conf_full_paths.slice(
+    //   0,
+    //   topcut_number
+    // );
+    // logger.debug("TopCut Card Conf Full Paths:");
+    // logger.debug({ msg: topcut_card_conf_full_paths });
 
     // TopCutした要素とtopcut_numberが同じ値の場合はis_button要素を有効にする
-    const is_button = topcut_card_conf_full_paths.length === topcut_number;
+    const is_button = translated_card_conf_full_paths.length > topcut_number;
 
     // CardConf.yamlを読み込む
     const array_card: CardProps[] = [];
-    for (const card_conf_full_path of topcut_card_conf_full_paths) {
+    for (const card_conf_full_path of translated_card_conf_full_paths) {
       const obj_card = yaml.load(
         await fs.readFile(card_conf_full_path.card_conf_full_path, "utf-8")
       ) as CardConf;

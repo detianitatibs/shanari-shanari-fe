@@ -1,5 +1,6 @@
 import type { Meta } from "@storybook/react";
 import ContentsListDetails from "./ContentsListDetails";
+import DetailProps from "@/types/DetailProps";
 
 const meta: Meta<typeof ContentsListDetails> = {
   title: "Organisms/コンテンツリスト/個別一覧ページ",
@@ -30,16 +31,29 @@ const obj_tech = {
   cards: array_card_tech,
   is_button: false,
 };
+const detail_tech: DetailProps = {
+  content: obj_tech,
+  current_page: 1,
+  total_pages: 1,
+  per_page: 10,
+};
+
 const obj_blog = {
   subject_name: "Blog",
   abbreviation_name: "blog",
   cards: array_card_blog,
   is_button: true,
 };
+const detail_blog: DetailProps = {
+  content: obj_blog,
+  current_page: 2,
+  total_pages: 10,
+  per_page: 10,
+};
 
 export const Tech = () => (
-  <ContentsListDetails {...obj_tech}></ContentsListDetails>
+  <ContentsListDetails {...detail_tech}></ContentsListDetails>
 );
 export const Blog = () => (
-  <ContentsListDetails {...obj_blog}></ContentsListDetails>
+  <ContentsListDetails {...detail_blog}></ContentsListDetails>
 );

@@ -60,7 +60,7 @@ describe("FetchCardConfsの単体テスト", () => {
       {
         subject_name: "Blog",
         abbreviation_name: "blog",
-        cards: [card, card, card, card],
+        cards: [card, card, card, card, card],
         is_button: true,
       },
     ];
