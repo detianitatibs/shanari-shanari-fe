@@ -1,8 +1,8 @@
 import ContentsListDetails from "@/components/organisms/contents-list-details/ContentsListDetails";
 
-import ContentsListProps from "@/types/ContentsListProps";
+import DetailProps from "@/types/DetailProps";
 
-const Details = ({ ...props }: ContentsListProps) => {
+const Details = ({ ...props }: DetailProps) => {
   return <ContentsListDetails {...props}></ContentsListDetails>;
 };
 
