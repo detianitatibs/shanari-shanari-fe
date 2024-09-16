@@ -2,6 +2,7 @@ import fs from "fs/promises";
 import path from "path";
 import yaml from "js-yaml";
 
+import logger from "@/libs/util/logger";
 import Details from "@/components/templates/details/Details";
 import DetailProps from "@/types/DetailProps";
 import ContentConf from "@/types/ContentConf";
@@ -40,7 +41,7 @@ const Page = async ({ ...props }: Props) => {
     total_pages: total_pages,
     per_page: per_page,
   };
-  console.log(content_list);
+  logger.info(content_list);
 
   if (["tech", "blog"].includes(props.params.category)) {
     return <Details {...content_list}></Details>;
