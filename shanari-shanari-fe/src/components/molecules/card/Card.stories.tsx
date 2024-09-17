@@ -13,18 +13,21 @@ const obj_card_blog = {
   title: "これはブログのタイトルです",
   category: "blog",
   date: new Date(2024, 10, 10),
+  url: "",
 };
 const obj_card_tech = {
   image_path: "/icon.png",
   title: "これは技術に関するタイトルです",
   category: "tech",
   date: new Date(2024, 10, 10),
+  url: "",
 };
 const obj_card_game = {
   image_path: "/icon.png",
   title: "これはゲームに関するタイトルです",
   category: "game",
   date: new Date(2024, 10, 10),
+  url: "",
 };
 const obj_card_sport = {
   image_path: "/icon.png",
@@ -32,6 +35,7 @@ const obj_card_sport = {
     "これはスポーツに関するたいとるです。長く書きすぎると他のアイコンとかぶるので制限が必要です。",
   category: "sport",
   date: new Date(2024, 10, 10),
+  url: "",
 };
 export const Blog = () => <Card {...obj_card_blog}></Card>;
 export const Tech = () => <Card {...obj_card_tech}></Card>;

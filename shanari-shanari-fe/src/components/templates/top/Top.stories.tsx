@@ -15,6 +15,7 @@ const card = {
   title: "これはブログのタイトルです",
   category: "blog",
   date: new Date(2024, 10, 10),
+  url: "",
 };
 // 複数カードを用意する
 for (let i = 0; i < 10; i++) {
