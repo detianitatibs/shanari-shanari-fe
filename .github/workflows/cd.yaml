@@ -57,6 +57,9 @@ jobs:
           ENVIRONMENT=${{ secrets.ENV_PROD }}
           AD_PUBLISHER_ID=${{ secrets.AD_PUBLISHER_ID }}
           AD_SLOT=${{ secrets.AD_SLOT }}
+          TOPCUT_TOP=8
+          TOPCUT_DETAIL=10
+          PINO_LOG_LEVEL=info
           EOF
 
       # Build the Docker image
