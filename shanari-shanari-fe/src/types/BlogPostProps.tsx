@@ -1,0 +1,9 @@
+interface BlogPostProps {
+  subject_name: string;
+  str_date: string;
+  category: string;
+  tags: string[];
+  markdown: string;
+}
+
+export default BlogPostProps;
