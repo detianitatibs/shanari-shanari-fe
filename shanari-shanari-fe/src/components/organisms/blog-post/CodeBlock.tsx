@@ -7,7 +7,7 @@ interface Props {
   className: string;
 }
 
-const CodeBlock: React.FC<Props> = ({ children, className }: Props) => {
+const CodeBlock: any = ({ children, className }: Props) => {
   const match = /language-(\w+)/.exec(className || "");
   return match ? (
     <SyntaxHighlighter
