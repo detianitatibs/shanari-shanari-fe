@@ -1,5 +1,0 @@
-CardConf:
-  # image_path: "XXX" ない場合はデフォルト(icon.png)を使うようにしたい
-  title: "技術1"
-  category: tech
-  date: "2024-10-10"
