@@ -3,6 +3,7 @@ interface CardProps {
   title: string;
   category: string;
   date: Date;
+  url: string;
 }
 
 export default CardProps;

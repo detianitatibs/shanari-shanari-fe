@@ -59,15 +59,7 @@ const FetchCardConfs = async (
     logger.debug("Sorted Card Conf Full Paths:");
     logger.debug({ msg: translated_card_conf_full_paths });
 
-    // 上位topcut_number分取得
-    // const topcut_card_conf_full_paths = translated_card_conf_full_paths.slice(
-    //   0,
-    //   topcut_number
-    // );
-    // logger.debug("TopCut Card Conf Full Paths:");
-    // logger.debug({ msg: topcut_card_conf_full_paths });
-
-    // TopCutした要素とtopcut_numberが同じ値の場合はis_button要素を有効にする
+    // 表示数よりも取得数が多い場合はis_button要素を有効にする
     const is_button = translated_card_conf_full_paths.length > topcut_number;
 
     // CardConf.yamlを読み込む
@@ -76,12 +68,26 @@ const FetchCardConfs = async (
       const obj_card = yaml.load(
         await fs.readFile(card_conf_full_path.card_conf_full_path, "utf-8")
       ) as CardConf;
+
+      // URLのリンクを作成する
+      let url: string;
+      if (content.abbreviation_name === "blog") {
+        const post_id = card_conf_full_path.card_conf_full_path
+          .split("/")
+          .slice(-5, -1)
+          .join("-");
+        url = `/blog/posts/${post_id}`;
+      } else {
+        url = "";
+      }
+
       // image_pathに指定がない場合はデフォルトの画像(icon.png)を指定する
       array_card.push({
         image_path: obj_card.CardConf.image_path ?? "/icon.png",
         title: obj_card.CardConf.title,
         category: obj_card.CardConf.category,
         date: new Date(obj_card.CardConf.date),
+        url: url,
       });
     }
     contents_list.push({

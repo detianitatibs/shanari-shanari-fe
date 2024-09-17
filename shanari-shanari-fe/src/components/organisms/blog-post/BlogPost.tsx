@@ -8,6 +8,7 @@ import Subject from "@/components/molecules/subject/Subject";
 import SubjectProps from "@/types/SubjectProps";
 import BlogPostProps from "@/types/BlogPostProps";
 import CodeBlock from "./CodeBlock";
+import { TwitterIcon, TwitterShareButton } from "next-share";
 
 const BlogPost = ({ ...props }: BlogPostProps) => {
   const subject: SubjectProps = {

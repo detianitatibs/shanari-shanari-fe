@@ -3,6 +3,7 @@ import fs from "fs/promises";
 import Blog from "@/components/templates/blog/Blog";
 import BlogPostProps from "@/types/BlogPostProps";
 import matter from "gray-matter";
+import logger from "@/libs/util/logger";
 
 interface Props {
   params: { postid: string };
@@ -21,7 +22,14 @@ const Page = async ({ ...props }: Props) => {
 
   // Markdownファイルを読み込む
   const path_markdown = `public/contents/blog/${array_postid[0]}/${array_postid[1]}/${array_postid[2]}/${array_postid[3]}/Article.md`;
-  const file_markdown = await fs.readFile(path_markdown, "utf-8");
+  let file_markdown;
+  try {
+    file_markdown = await fs.readFile(path_markdown, "utf-8");
+  } catch (e) {
+    logger.error(`Not Found contents of blog: ${path_markdown}`);
+    return <div>Not Found Article File.</div>;
+  }
+
   const markdown = matter(file_markdown);
 
   const blog_post: BlogPostProps = {
