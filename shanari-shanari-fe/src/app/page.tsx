@@ -3,7 +3,7 @@ import FetchContentConfs from "@/libs/fetch_data/FetchContentConfs";
 import FetchCardConfs from "@/libs/fetch_data/FetchCardConfs";
 import logger from "@/libs/util/logger";
 
-const Home = async () => {
+const Page = async () => {
   // コンテンツ一覧を取得
   const array_obj_contents = await FetchContentConfs("public/");
   logger.info("Got array_obj_contents");
@@ -23,4 +23,6 @@ const Home = async () => {
   );
 };
 
-export default Home;
+// SSRを強制する
+export const dynamic = "force-dynamic";
+export default Page;

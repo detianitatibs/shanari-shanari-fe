@@ -27,13 +27,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # Create .env.test.local ファイル
-      - name: Create .env.test.local file
+      # Create .env.production.local ファイル
+      - name: Create .env.production.local file
         run: |
-          cat << EOF > shanari-shanari-fe/.env.test.local
+          cat << EOF > shanari-shanari-fe/.env.production.local
           ENVIRONMENT=${{ secrets.ENV_TEST }}
           AD_PUBLISHER_ID=${{ secrets.AD_PUBLISHER_ID }}
           AD_SLOT=${{ secrets.AD_SLOT }}
+          TOPCUT_TOP=8
+          TOPCUT_DETAIL=10
+          PINO_LOG_LEVEL=info
           EOF
 
       # Build the Docker image
