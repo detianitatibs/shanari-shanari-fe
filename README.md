@@ -32,7 +32,13 @@ $ docker build -t shanari-shanari-fe:v0.0.1 .
 実行後、ブラウザから"localhost:3000"でアクセスできる
 
 ```
-$ docker run -d -p 3000:3000 --name ssfe shanari-shanari-fe
+$ docker run -d -p 3000:3000 --name ssfe -v ./shanari-shanari-fe/public/contents/blog:/app/public/contents/blog shanari-shanari-fe:v0.0.1
+```
+
+コンテナに入りたい時は、以下を実行する
+
+```
+$ docker exec -it ssfe /bin/sh
 ```
 
 動作確認後、以下のコマンドで停止、削除すること

@@ -8,6 +8,7 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY shanari-shanari-fe/package.json shanari-shanari-fe/package-lock.json* ./
+RUN npm install -g npm@latest
 RUN npm ci
 
 # Rebuild the source code only when needed
@@ -16,6 +17,7 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY shanari-shanari-fe .
 
+COPY shanari-shanari-fe/.env.production.local /app/.env.production
 RUN npm run build
 
 # Production image, copy all the files and run next
