@@ -51,7 +51,7 @@ jobs:
           echo ${{steps.auth.outputs.access_token}} | docker login -u oauth2accesstoken --password-stdin https://$GAR_LOCATION-docker.pkg.dev
 
       # Create .env.prod.local ファイル
-      - name: Create .env.prod.local file
+      - name: Create .env.production.local file
         run: |
           cat << EOF > shanari-shanari-fe/.env.production.local
           ENVIRONMENT=${{ secrets.ENV_PROD }}
