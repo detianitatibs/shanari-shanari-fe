@@ -17,6 +17,7 @@
     "@iconify-json/mingcute": "^1.1.19",
     "@iconify-json/streamline": "^1.1.9",
     "@iconify/tailwind": "^1.1.2",
+    "@next/third-parties": "^14.2.13",
     "fast-glob": "^3.3.2",
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.0",

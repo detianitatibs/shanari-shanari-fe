@@ -60,6 +60,7 @@ jobs:
           TOPCUT_TOP=8
           TOPCUT_DETAIL=10
           PINO_LOG_LEVEL=info
+          GA_ID=${{ secrets.GA_ID }}
           EOF
 
       # Build the Docker image

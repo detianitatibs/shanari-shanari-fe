@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleTagManager } from "@next/third-parties/google";
 // Google Font
 import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
@@ -27,10 +28,13 @@ export default function RootLayout({
 }>) {
   // 広告要素
   const slot = process.env.AD_SLOT || "";
+  // GA
+  const ga_id = process.env.GA_ID || "";
 
   return (
     <html lang="ja">
       <AdScript></AdScript>
+      <GoogleTagManager gtmId={ga_id} />
       <body className={`${inter.variable} ${noto.variable}`}>
         <Header></Header>
         {/* モバイルでないときはレイアウトを5分割して1:3:1の比率で利用する */}
