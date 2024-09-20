@@ -33,16 +33,16 @@ export default function RootLayout({
       <AdScript></AdScript>
       <body className={`${inter.variable} ${noto.variable}`}>
         <Header></Header>
-        {/* レイアウトを5分割して1:3:1の比率で利用する */}
-        <div className="grid grid-cols-5 gap-4">
+        {/* モバイルでないときはレイアウトを5分割して1:3:1の比率で利用する */}
+        <div className="md:flex flex-row">
           {/* Ad左 */}
-          <div className="...">
+          <div className="basis-1/5">
             <AdSense slot={slot}></AdSense>
           </div>
           {/* メインコンテンツ */}
-          <div className="col-span-3">{children}</div>
+          <div className="basis-3/5">{children}</div>
           {/* Ad右 */}
-          <div className="...">
+          <div className="basis-1/5">
             <AdSense slot={slot}></AdSense>
           </div>
         </div>
