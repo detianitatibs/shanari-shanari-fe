@@ -19,17 +19,16 @@ const Card = ({ ...props }: CardProps) => {
             style={{ objectFit: "contain" }}
           />
         </div>
-        <div className="h-[80px] relative">
-          <div className="text-size5">{props.title}</div>
-          <div className="absolute bottom-0 left-0 px-2">
+
+        <div className="text-size5">{props.title}</div>
+        <div className="flex flex-row justify-end">
+          <div className="flex-grow">
             <Icons
               icon_key={props.category}
               additionalClassName="text-size3"
             ></Icons>
           </div>
-          <div className="text-size6 absolute bottom-0 right-0 px-2">
-            {str_date}
-          </div>
+          <div className="text-size6">{str_date}</div>
         </div>
       </div>
     </Link>
