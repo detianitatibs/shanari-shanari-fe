@@ -33,8 +33,8 @@ export default function RootLayout({
 
   return (
     <html lang="ja">
-      <AdScript></AdScript>
       <GoogleTagManager gtmId={ga_id} />
+      <AdScript></AdScript>
       <body className={`${inter.variable} ${noto.variable}`}>
         <Header></Header>
         {/* モバイルでないときはレイアウトを5分割して1:3:1の比率で利用する */}
