@@ -33,6 +33,7 @@ export default function RootLayout({
 
   return (
     <html lang="ja">
+      {/* GTM(Google Tag Manager)の設定を追加 */}
       <GoogleTagManager gtmId={ga_id} />
       <AdScript></AdScript>
       <body className={`${inter.variable} ${noto.variable}`}>
