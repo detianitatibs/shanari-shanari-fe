@@ -3,6 +3,7 @@ interface BlogPostProps {
   str_date: string;
   category: string;
   tags: string[];
+  url: string;
   markdown: string;
 }
 

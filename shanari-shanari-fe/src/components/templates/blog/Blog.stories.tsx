@@ -13,6 +13,7 @@ const props: BlogPostProps = {
   str_date: "2022-04-23",
   category: "tech",
   tags: ["python", "pytest"],
+  url: "",
   markdown: `
 # GFM
 
