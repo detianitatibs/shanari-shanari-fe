@@ -19,6 +19,8 @@ const Page = async ({ ...props }: Props) => {
 
   // パラメータから各値を取得する
   const array_postid = props.params.postid.split("-");
+  const domain = process.env.DOMAIN ?? "localhost";
+  const url = `https://${domain}/blog/posts/${props.params.postid}`;
 
   // Markdownファイルを読み込む
   const path_markdown = `public/contents/blog/${array_postid[0]}/${array_postid[1]}/${array_postid[2]}/${array_postid[3]}/Article.md`;
@@ -37,6 +39,7 @@ const Page = async ({ ...props }: Props) => {
     str_date: markdown.data.date,
     category: markdown.data.category,
     tags: markdown.data.tags,
+    url: url,
     markdown: markdown.content,
   };
 

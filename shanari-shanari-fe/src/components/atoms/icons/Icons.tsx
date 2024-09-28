@@ -10,6 +10,7 @@ const Icons = ({ icon_key, additionalClassName = "" }: IconsProps) => {
     tech: "icon-[streamline--ai-technology-spark]",
     game: "icon-[mingcute--game-2-line]",
     sport: "icon-[bx--run]",
+    twitter: "icon-[fa6-brands--square-x-twitter]",
   };
   switch (icon_key) {
     case "blog":
@@ -23,6 +24,9 @@ const Icons = ({ icon_key, additionalClassName = "" }: IconsProps) => {
       break;
     case "sport":
       additionalElement.push(icon_dict.sport);
+      break;
+    case "twitter":
+      additionalElement.push(icon_dict.twitter);
       break;
     default:
       additionalElement.push("");

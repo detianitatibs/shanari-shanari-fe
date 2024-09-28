@@ -15,3 +15,6 @@ export const BlogSelectedSize = () => (
 export const Tech = () => <Icons icon_key="tech"></Icons>;
 export const Game = () => <Icons icon_key="game"></Icons>;
 export const Sport = () => <Icons icon_key="sport"></Icons>;
+export const Twitter = () => (
+  <Icons icon_key="twitter" additionalClassName="text-size1"></Icons>
+);

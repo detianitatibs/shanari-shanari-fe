@@ -8,6 +8,8 @@ import Subject from "@/components/molecules/subject/Subject";
 import SubjectProps from "@/types/SubjectProps";
 import BlogPostProps from "@/types/BlogPostProps";
 import CodeBlock from "./CodeBlock";
+import XButton from "@/components/atoms/buttons/XButton";
+import SNSShareProps from "@/types/SNSShareProps";
 
 const BlogPost = ({ ...props }: BlogPostProps) => {
   const subject: SubjectProps = {
@@ -18,6 +20,14 @@ const BlogPost = ({ ...props }: BlogPostProps) => {
   const category = props.category;
   const tags = props.tags;
 
+  // 共有ボタンの設定
+  const sns_share: SNSShareProps = {
+    title: props.subject_name,
+    url: props.url,
+    tags: tags,
+  };
+
+  // 目次の設定
   const toc_options = {
     headings: ["h1", "h2"],
     cssClasses: {
@@ -28,7 +38,10 @@ const BlogPost = ({ ...props }: BlogPostProps) => {
   return (
     <div className="p-4">
       <Subject {...subject}></Subject>
-      <div className="bg-zinc-100 p-2 mt-6 mb-6 rounded-lg flex justify-end">
+      <div className="mt-2 flex items-center">
+        <XButton {...sns_share} />
+      </div>
+      <div className="bg-zinc-100 p-2 mt-4 mb-2 rounded-lg flex justify-end">
         <div className="flex-grow">
           <div className="text-size5 text-gray-500">{`Category: ${category}`}</div>
           <div className="text-size5 text-gray-500">{`Tags(仮): ${tags}`}</div>
