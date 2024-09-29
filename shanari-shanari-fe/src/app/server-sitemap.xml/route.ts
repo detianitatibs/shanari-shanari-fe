@@ -35,3 +35,6 @@ export async function GET(request: Request) {
 
   return getServerSideSitemap(sitemap);
 }
+
+// SSRを強制する
+export const dynamic = "force-dynamic";
