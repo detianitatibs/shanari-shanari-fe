@@ -135,3 +135,8 @@ dist
 # ブログの記事は除外する
 /shanari-shanari-fe/public/contents/blog/*
 !/shanari-shanari-fe/public/contents/blog/ContentConf.yaml
+
+# サイトマップに関するファイルは除外する
+robots.txt
+sitemap-0.xml
+sitemap.xml
