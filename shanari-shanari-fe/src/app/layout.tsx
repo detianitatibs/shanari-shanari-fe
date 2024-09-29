@@ -17,8 +17,9 @@ const noto = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "DORAMPIA",
-  description: "This is a page that provides blog and tools for Pokémon VGC.",
+  title: "どらんぴあ",
+  description:
+    "ブログを書いたりプログラミングを利用したポケモンツールの公開をします。",
 };
 
 export default function RootLayout({
