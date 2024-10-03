@@ -48,7 +48,7 @@ $ docker stop ssfe
 $ docker rm ssfe
 ```
 
-## Jest による単体テストの実施
+## Jestによる単体テストの実施
 
 ```
 $ npm run test
