@@ -7,7 +7,7 @@ import { headers } from "next/headers";
 const Page = async () => {
   // 調査用ログ
   const platform = headers().get("sec-ch-ua-platform");
-  console.log(`sec-ch-ua-platform: ${platform}`);
+  logger.info(`sec-ch-ua-platform: ${platform}`);
 
   // コンテンツ一覧を取得
   const array_obj_contents = await FetchContentConfs("public/");
