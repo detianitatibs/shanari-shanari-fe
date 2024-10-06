@@ -7,8 +7,10 @@ import { headers } from "next/headers";
 const Page = async () => {
   // 何らかのプラットフォームからのアクセスのみコンテンツを表示する (#44対策)
   const platform = headers().get("sec-ch-ua-platform");
+  const mobile = headers().get("sec-ch-ua-mobile");
   logger.info(`sec-ch-ua-platform: ${platform}`);
-  if (platform != null) {
+  logger.info(`sec-ch-ua-mobile: ${mobile}`);
+  if (platform != null || mobile === "?1") {
     // コンテンツ一覧を取得
     const array_obj_contents = await FetchContentConfs("public/");
     logger.info("Got array_obj_contents");
