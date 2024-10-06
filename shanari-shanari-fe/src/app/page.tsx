@@ -7,10 +7,11 @@ import { headers } from "next/headers";
 const Page = async () => {
   // 何らかのプラットフォームからのアクセスのみコンテンツを表示する (#44対策)
   const platform = headers().get("sec-ch-ua-platform");
-  const mobile = headers().get("sec-ch-ua-mobile");
+  const user_agent = headers().get("user-agent") ?? "";
   logger.info(`sec-ch-ua-platform: ${platform}`);
-  logger.info(`sec-ch-ua-mobile: ${mobile}`);
-  if (platform != null || mobile === "?1") {
+  logger.info(`user-agent: ${user_agent}`);
+
+  if (platform != null || user_agent.indexOf("AppleWebKit") > 0) {
     // コンテンツ一覧を取得
     const array_obj_contents = await FetchContentConfs("public/");
     logger.info("Got array_obj_contents");
