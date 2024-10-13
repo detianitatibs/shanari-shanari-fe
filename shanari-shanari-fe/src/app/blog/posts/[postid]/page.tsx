@@ -95,6 +95,7 @@ export async function generateMetadata(
       title: markdown.data.title,
       card: "summary_large_image",
       description: markdown.data.description,
+      images: [markdown.data.image, ...previousImages],
     },
   };
 }
