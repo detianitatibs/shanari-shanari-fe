@@ -7,8 +7,8 @@ const Logos = ({ pattern, onClick }: LogosProps) => {
   if (pattern === "main") {
     return (
       <Image
-        src="/logo_main.drawio.svg"
-        width={860}
+        src="/logo_main.jpg"
+        width={640}
         height={214}
         onClick={onClick}
         alt="Main Logo"
